@@ -3,11 +3,12 @@
   }
 .todo{
     background-color: var(--color-primary);
+    max-width: 320px;
 }
 .choose{
     position: relative;
 background: white;
-width: 250px;
+
 padding: 10px 5px;
 border-bottom: 1px solid var(--color-primary);
 }
@@ -34,38 +35,97 @@ border-bottom: 1px solid var(--color-primary);
 .element{
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: flex-end;
     background-color: white;
     padding: 10px 5px;
     border-bottom: 1px solid var(--color-primary);
-    width: 250px;
+  
 }
-.checkbox{
+.element-text_active{
+    text-decoration: line-through;
+    color: var(--color-primary);
+}
+.checkbox, .checkbox-active{
     position: relative;
-    width: 15px;
-    height: 15px;
-    border: 0.5px solid rgb(176, 209, 176);
+    width: 18px;
+    height: 18px;
+    border: 0.5px solid var(--color-primary);
     border-radius: 50%;
+    cursor: pointer;
+     transition : border 1s ease-out;
 }
-.checkbox::before{
+.checkbox-active, .checkbox:hover{
+border-color: rgb(176, 209, 176);
+}
+.checkbox::before,.checkbox::after{
+    content: '';
+   opacity: 0;
+    transition: background-color 1s ease-out;
+ 
+ 
+}
+.checkbox-active::before, .checkbox:hover::before{  
     content: '';
     display: block;
     position: absolute;
-    left: 3px;
-    top: 9px;
+    left: 4px;
+    top: 10px;
     width: 5px;
  height: 1px;
  background-color: rgb(117, 192, 117);
     transform:  rotate(44deg);
+    opacity: 1;
 }
-.checkbox::after{
+.checkbox-active::after, .checkbox:hover::after{
     content: '';
     display: block;
     position: absolute;
-    left: 5px;
-    top: 7px;
-    width: 8px;
+    left: 6px;
+    top: 8px;
+    width: 9px;
  height: 1px;
  background-color: rgb(117, 192, 117);
     transform:  rotate(120deg);
+    opacity: 1;
+}
+
+.footer-todo{
+    background-color: white;
+    font-size: 10px;
+    color: grey;
+
+}
+
+.nav-todo{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 12px;
+        border-bottom: 1px solid var(--color-primary);
+        line-height: 14px;
+}
+.button-todo{
+    display: flex;
+    gap: 10px;
+  
+}
+.button-btn{
+    cursor: pointer;
+}
+.button-todo_active{
+    border: 1px solid orange;
+cursor: pointer;
+    padding: 0 4px;
+    border-radius: 2px;
+}
+.footer-link_1, .footer-link_2{
+  
+    height: 3px;
+    margin: 0 2px;
+    background-color: #f7f7f7b5;
+    border-color: var(--color-primary);
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+}
+.footer-link_2{
+    margin: 0 4px;
 }
