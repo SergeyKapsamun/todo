@@ -7,7 +7,8 @@ function App() {
   const listTask=[
     {id:1,done:false, task:'Тестовое задание'},
     {id:2,done:true, task:'Прекрасный код'},
-    {id:3,done:false, task:'Покрытие тестами'}
+    {id:3,done:false, task:'Покрытие тестами'},
+
 ]
   return (
     <div className="App">

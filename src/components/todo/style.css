@@ -1,131 +1,146 @@
 :root {
-    --color-primary: #8080803d;
-  }
-.todo{
-    background-color: var(--color-primary);
-    max-width: 320px;
+  --color-primary: #8080803d;
 }
-.choose{
-    position: relative;
-background: white;
+.wrapper-todo {
+  display: flex;
 
-padding: 10px 5px;
-border-bottom: 1px solid var(--color-primary);
+  flex-direction: column;
+
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-primary);
 }
-.arrow{
-    left: 5px;
-   position: relative;
-   cursor: pointer;
+h1 {
+  font-size: 46px;
+  color: #cba4a4;
+  margin-left: 30px;
 }
-.arrow::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 5px;
-    width: 5px;
-    height: 5px;
-    border-bottom: 3px solid var(--color-primary);
-    border-right: 3px solid var(--color-primary);
-    transform:  rotate(45deg);
+.todo {
+  margin-left: 30px;
+  width: 320px;
 }
-.todo-text{
-    padding-left: 25px;
-    color: var(--color-primary);
+.choose {
+  position: relative;
+  background: white;
+
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--color-primary);
 }
-.element{
-    display: flex;
-    gap: 10px;
-    align-items: flex-end;
-    background-color: white;
-    padding: 10px 5px;
-    border-bottom: 1px solid var(--color-primary);
-  
+.arrow {
+  left: 5px;
+  top: 2px;
+  position: relative;
+  cursor: pointer;
 }
-.element-text_active{
-    text-decoration: line-through;
-    color: var(--color-primary);
+.arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  width: 5px;
+  height: 5px;
+  border-bottom: 3px solid var(--color-primary);
+  border-right: 3px solid var(--color-primary);
+  transform: rotate(45deg);
 }
-.checkbox, .checkbox-active{
-    position: relative;
-    width: 18px;
-    height: 18px;
-    border: 0.5px solid var(--color-primary);
-    border-radius: 50%;
-    cursor: pointer;
-     transition : border 1s ease-out;
+.todo-text {
+  padding-left: 25px;
+  color: var(--color-primary);
 }
-.checkbox-active, .checkbox:hover{
-border-color: rgb(176, 209, 176);
+.element {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  background-color: white;
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--color-primary);
 }
-.checkbox::before,.checkbox::after{
-    content: '';
-   opacity: 0;
-    transition: background-color 1s ease-out;
- 
- 
+.element-text_active {
+  text-decoration: line-through;
+  color: var(--color-primary);
 }
-.checkbox-active::before, .checkbox:hover::before{  
-    content: '';
-    display: block;
-    position: absolute;
-    left: 4px;
-    top: 10px;
-    width: 5px;
- height: 1px;
- background-color: rgb(117, 192, 117);
-    transform:  rotate(44deg);
-    opacity: 1;
+.checkbox,
+.checkbox-active {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 0.5px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 1s ease-out;
 }
-.checkbox-active::after, .checkbox:hover::after{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 6px;
-    top: 8px;
-    width: 9px;
- height: 1px;
- background-color: rgb(117, 192, 117);
-    transform:  rotate(120deg);
-    opacity: 1;
+.checkbox-active,
+.checkbox:hover {
+  border-color: rgb(176, 209, 176);
+}
+.checkbox::before,
+.checkbox::after {
+  content: "";
+  opacity: 0;
+  transition: background-color 1s ease-out;
+}
+.checkbox-active::before,
+.checkbox:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 5px;
+  height: 1px;
+  background-color: rgb(117, 192, 117);
+  transform: rotate(44deg);
+  opacity: 1;
+}
+.checkbox-active::after,
+.checkbox:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  width: 9px;
+  height: 1px;
+  background-color: rgb(117, 192, 117);
+  transform: rotate(120deg);
+  opacity: 1;
 }
 
-.footer-todo{
-    background-color: white;
-    font-size: 10px;
-    color: grey;
-
+.footer-todo {
+  font-size: 10px;
+  color: grey;
 }
 
-.nav-todo{
-        display: flex;
-        justify-content: space-between;
-        padding: 5px 12px;
-        border-bottom: 1px solid var(--color-primary);
-        line-height: 14px;
+.nav-todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--color-primary);
+  line-height: 14px;
+  background-color: white;
 }
-.button-todo{
-    display: flex;
-    gap: 10px;
-  
+.button-todo {
+  display: flex;
+  gap: 10px;
 }
-.button-btn{
-    cursor: pointer;
+.button-btn, .clear-completed {
+  cursor: pointer;
 }
-.button-todo_active{
-    border: 1px solid orange;
-cursor: pointer;
-    padding: 0 4px;
-    border-radius: 2px;
+.button-todo_active {
+  border: 1px solid orange;
+  cursor: pointer;
+  padding: 0 4px;
+  border-radius: 2px;
 }
-.footer-link_1, .footer-link_2{
-  
-    height: 3px;
-    margin: 0 2px;
-    background-color: #f7f7f7b5;
-    border-color: var(--color-primary);
-    border-style: solid;
-    border-width: 0 1px 1px 1px;
+.footer-link_1,
+.footer-link_2 {
+  height: 3px;
+  margin: 0 2px;
+  background-color: #f7f7f7b5;
+  border-color: var(--color-primary);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
 }
-.footer-link_2{
-    margin: 0 4px;
+.footer-link_2 {
+  margin: 0 4px;
 }
